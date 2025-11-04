@@ -1,10 +1,13 @@
 import axios from "axios";
+import { configDotenv } from "dotenv";
+configDotenv();
 
-const SEGMENT_API_URL = "http://localhost:5000/segments/evaluate";
+const SEGMENT_API_URL =
+  import.meta.env.VITE_SEGMENT_API_URL || "http://localhost:5000";
 
 export async function evaluateSegment(rulesText) {
   try {
-    const response = await axios.post(SEGMENT_API_URL, { rulesText });
+    const response = await axios.post(`${SEGMENT_API_URL}/segments/evaluate`, { rulesText });
     return response.data; // { result: [...] }
   } catch (error) {
     // Handle errors consistently

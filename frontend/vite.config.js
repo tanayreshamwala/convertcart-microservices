@@ -13,6 +13,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 3000,
+    allowedHosts: ['frontend-5b95.onrender.com'],
     proxy: {
       "/products": {
         target: "http://product-service:4000",
