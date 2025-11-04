@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - product-service
+      - segment-service
+
+  product-service:
+    build: ./product-service
+    ports:
+      - "4000:4000"
+
+  segment-service:
+    build: ./segment-service
+    ports:
+      - "5000:5000"
