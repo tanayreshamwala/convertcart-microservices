@@ -1,6 +1,4 @@
 import axios from "axios";
-import { configDotenv } from "dotenv";
-configDotenv();
 
 const SEGMENT_API_URL =
   import.meta.env.VITE_SEGMENT_API_URL || "http://localhost:5000";
